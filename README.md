@@ -9,12 +9,6 @@ A premium personal portfolio built with **Next.js 16**, **React 19**, **TypeScri
 - Node.js 18+
 - npm 9+
 
-### Installation
-
-```bash
-npm install
-```
-
 ### Environment Variables
 
 Copy the example file and fill in your values:
