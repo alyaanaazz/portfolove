@@ -2,25 +2,11 @@
 
 A premium personal portfolio built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**.
 
-## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
 - npm 9+
-
-### Environment Variables
-
-Copy the example file and fill in your values:
-
-```bash
-cp .env.example .env
-```
-
-| Variable | Description |
-|---|---|
-| `MEDIUM_USERNAME` | Your Medium username (without `@`). Used for the RSS blog integration. |
-| `NEXT_PUBLIC_SITE_URL` | The public URL of your deployed site. Used for SEO metadata and sitemap. |
 
 ### Development
 
@@ -37,113 +23,40 @@ npm run build
 npm run start
 ```
 
-### Deployment (Vercel)
-
-1. Push your repository to GitHub.
-2. Import the repository on [vercel.com](https://vercel.com).
-3. Set the environment variables in the Vercel dashboard.
-4. Deploy. No Docker, no separate backend required.
-
----
-
-## How to Customize Content
-
-### Add a Project
-
-Edit `src/data/projects.ts` and add a new object to the array:
-
-```ts
-{
-  slug: "my-project",
-  title: "My Project",
-  description: "A short description.",
-  year: "2026",
-  role: "Designer & Developer",
-  category: "Web App",
-  image: "/images/projects/my-project.jpg",
-  technologies: ["Next.js", "TypeScript"],
-  featured: true,
-  problem: "What problem it solves.",
-  process: "How you approached it.",
-  solution: "What you built.",
-  result: "The outcome.",
-  gallery: ["/images/projects/my-project-1.jpg"],
-  links: { live: "https://...", github: "https://..." },
-}
-```
-
-Place project images in `public/images/projects/`.
-
-### Add an Experience
-
-Edit `src/data/experience.ts` and add a new object **at the top** of the array (newest first). The homepage automatically displays the 3 most recent entries.
-
-### Add a Certification
-
-Edit `src/data/certifications.ts` and add a new object to the array:
-
-```ts
-{
-  id: "cert-unique-id",
-  type: "certification",
-  name: "Certification Name",
-  issuer: "Issuing Organization",
-  issueDate: "2026",
-  credentialId: "XXXX-XXXX",
-  credentialUrl: "https://...",
-  logo: "/images/certifications/logo.png",
-  category: "Design",
-  skills: ["Skill 1", "Skill 2"],
-  featured: false,
-}
-```
-
-### Add a Technology
-
-Edit `src/data/tech-stack.ts` and add a new object:
-
-```ts
-{ name: "Svelte", category: "Frontend", icon: "Layers" }
-```
-
-Available icon names are mapped in `src/components/sections/tech-stack-section.tsx`.
-
-### Replace Profile Image
-
-Replace `public/images/profile.jpg` with your new image.
-
-### Replace CV
-
-Replace `public/cv/nisrina-alya-nabilah-cv.pdf` with your updated CV.
-
-### Update Social Links
-
-Edit the `socials` and `socialLinks` fields in `src/data/profile.ts`.
-
-### Configure Medium Username
-
-Set `MEDIUM_USERNAME` in your `.env` file (or update `mediumUsername` in `src/data/profile.ts`).
-
----
-
 ## Architecture
 
 ```
 src/
-  app/           # Next.js App Router pages
-  components/    # UI components (sections, ui, navigation, etc.)
-  data/          # All portfolio content (TypeScript data files)
-  lib/           # Utilities (Medium RSS parser)
-  types/         # TypeScript type definitions
+  app/
+  components/ 
+  data/
+  lib/
+  types/
 public/
-  images/        # Static images (profile, projects, certifications)
-  cv/            # CV PDF
+  images/
+  cv/
 ```
-
-- **Server Components** by default, **Client Components** only where needed (3D card, theme toggle, mobile nav).
-- Medium RSS is fetched server-side with 1-hour revalidation.
-- No database, no CMS, no auth — just static data files and server-side RSS.
 
 ## License
 
-Private. All rights reserved.
+MIT License
+
+Copyright (c) 2026 Nisrina Alya Nabilah
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
