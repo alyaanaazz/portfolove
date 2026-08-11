@@ -24,7 +24,10 @@
 .DS_Store
 *.pem
 
-# debug
+# general logs
+*.log
+
+# debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -32,6 +35,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.local.example
 
 # vercel
 .vercel
@@ -39,3 +44,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# linter & tool cache
+.eslintcache
+.stylelintcache
+
+# monorepo / turborepo build cache
+.turbo/
+
+# IDE & Text Editor
+.vscode/
+.idea/
+
+# temporary & backup files (Vim / Nano / Linux terminal)
+*.swp
+*.swo
+*~
