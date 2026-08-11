@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: [profile.profileImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
 };
 
