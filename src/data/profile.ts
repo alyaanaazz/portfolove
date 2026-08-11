@@ -12,8 +12,8 @@ export const profile: Profile = {
   timezone: "Asia/Jakarta",
   email: "nisrinaalyanabilah@gmail.com",
   mediumUsername: "nisrina.alya",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://nisrina-portfolio.vercel.app",
-  profileImage: "/images/profile.jpg",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.nisrinaalya.site",
+  profileImage: "/images/profile.png",
   socials: {
     github: "https://github.com/alyaanaazz",
     linkedin: "https://www.linkedin.com/in/nisrina-alya",
