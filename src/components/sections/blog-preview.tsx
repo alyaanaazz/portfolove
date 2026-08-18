@@ -10,7 +10,7 @@ export function BlogPreview({ posts }: { posts: MediumPost[] }) {
   const rest = posts.slice(1, 3);
 
   return (
-    <SectionReveal id="blog" className="border-t border-black/10 pt-24 dark:border-white/10 md:pt-32">
+    <SectionReveal id="blog" className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16">
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
@@ -30,9 +30,11 @@ export function BlogPreview({ posts }: { posts: MediumPost[] }) {
             href={featured.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group grid overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] transition hover:-translate-y-1 hover:border-black/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20 md:grid-cols-2"
+            className={`group grid overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] transition hover:-translate-y-1 hover:border-black/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20 ${
+              featured.thumbnail ? "md:grid-cols-2" : ""
+            }`}
           >
-            <ArticleImage post={featured} priority />
+            {featured.thumbnail && <ArticleImage post={featured} priority />}
             <div className="flex min-h-80 flex-col justify-end p-7">
               <p className="text-sm text-zinc-500 dark:text-zinc-400">
                 {featured.author} / {formatDate(featured.pubDate)}
@@ -70,9 +72,11 @@ export function ArticleCard({ post }: { post: MediumPost }) {
       href={post.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group grid overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] transition hover:-translate-y-1 hover:border-black/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20 sm:grid-cols-[0.8fr_1fr]"
+      className={`group grid overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] transition hover:-translate-y-1 hover:border-black/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20 ${
+        post.thumbnail ? "sm:grid-cols-[0.8fr_1fr]" : ""
+      }`}
     >
-      <ArticleImage post={post} />
+      {post.thumbnail && <ArticleImage post={post} />}
       <div className="p-5">
         <p className="text-xs text-zinc-500">{formatDate(post.pubDate)} / {post.readingTime}</p>
         <h3 className="mt-3 text-lg font-semibold text-zinc-950 dark:text-white">{post.title}</h3>
@@ -83,9 +87,7 @@ export function ArticleCard({ post }: { post: MediumPost }) {
 }
 
 function ArticleImage({ post, priority = false }: { post: MediumPost; priority?: boolean }) {
-  if (!post.thumbnail) {
-    return <div className="min-h-52 bg-[radial-gradient(circle_at_35%_25%,rgba(100,29,50,0.55),transparent_35%),linear-gradient(135deg,#08111C,#05070B)]" />;
-  }
+  if (!post.thumbnail) return null;
 
   return (
     <div className="relative min-h-52 overflow-hidden bg-zinc-900">

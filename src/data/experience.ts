@@ -11,10 +11,9 @@ export const experience: Experience[] = [
     description:
       "Leading strategic project planning and partnership initiatives within the Business and Partnership Bureau, with a focus on organizational growth and stakeholder collaboration.",
     logo: "/images/experience/bem.png",
+    gallery: ["/images/experience/bem.png"],
     achievements: [
-      "Spearheaded project planning and execution for initiatives within the Business and Partnership Bureau.",
-      "Managed stakeholder engagement and partnership initiatives to support organizational objectives.",
-      "Coordinated project activities across teams to ensure effective planning and execution.",
+      "Spearheading strategic partnership acquisitions and sponsorship pipelines, negotiating high-impact terms to secure external funding and organizational resources.",
     ],
     technologies: [
       "Project Management",
@@ -33,10 +32,11 @@ export const experience: Experience[] = [
     description:
       "Leading the Academy division of COMPFEST, managing educational initiatives and coordinating programs designed to provide accessible and impactful technology learning experiences.",
     logo: "/images/experience/cf18.png",
+    gallery: ["/images/experience/cf18.png", "/images/experience/cf17.png"],
     achievements: [
-      "Leading the planning and execution of academy programs across multiple technology and professional learning tracks.",
-      "Coordinating teams and operational activities to deliver large-scale educational initiatives.",
-      "Driving the development of inclusive technology education programs for participants across Indonesia.",
+      "Orchestrating 4 multi-track national bootcamps across Software Engineering, Product Management, Data Science, and UX, targeting 4,400+ nationwide participants.",
+      "Drove a 110.47% YoY surge in applicant volume compared to COMPFEST 17 through strategic curriculum redesign and targeted marketing outreach.",
+      "Leading cross-functional teams in curriculum execution, speaker acquisition, and participant operations for Indonesia's largest student-led IT event.",
     ],
     technologies: [
       "Leadership",
@@ -56,11 +56,10 @@ export const experience: Experience[] = [
     description:
       "Overseeing human resources initiatives at BETIS Fasilkom UI, covering recruitment, staff development, performance evaluation, internal communication, and organizational culture.",
     logo: "/images/experience/betis.png",
+    gallery: ["/images/experience/betis.png"],
     achievements: [
-      "Overseeing the recruitment lifecycle to identify and onboard talent aligned with organizational standards.",
-      "Facilitating staff development and performance evaluation initiatives to encourage continuous growth.",
-      "Strengthening internal communication and workplace culture between staff and management.",
-      "Supporting the development of HR processes to maintain a positive and productive organizational environment.",
+      "Directing the talent acquisition lifecycle to recruit, onboard, and manage top-tier committee members aligned with organizational standards.",
+      "Frameworked internal communication channels and performance evaluation metrics to maintain team productivity and a zero-conflict workplace culture.",
     ],
     technologies: [
       "Human Resources",
@@ -80,11 +79,10 @@ export const experience: Experience[] = [
     description:
       "Supported the Product Management Academy through recruitment, staff development, performance management, and workplace culture initiatives.",
     logo: "/images/experience/cf17.png",
+    gallery: ["/images/experience/cf17.png", "/images/experience/cf18.png"],
     achievements: [
-      "Managed recruitment processes to identify and onboard qualified academy staff.",
-      "Organized training and staff development programs to support team growth and performance.",
-      "Supported HR policies, performance management, and staff engagement initiatives.",
-      "Contributed to building a positive and collaborative working environment within the academy.",
+      "Achieved a 100% staff retention and graduation rate with 0% withdrawal across the Product Management Academy track by managing end-to-end HR engagement and performance tracking.",
+      "Led talent sourcing, structured onboarding, and staff development initiatives to foster high team retention.",
     ],
     technologies: [
       "Human Resources",
@@ -104,10 +102,10 @@ export const experience: Experience[] = [
     description:
       "Supported the Public Relations division through recruitment, staff development, and team coordination to strengthen organizational operations and collaboration.",
     logo: "/images/experience/oh.png",
+    gallery: ["/images/experience/oh.png"],
     achievements: [
-      "Supported recruitment and onboarding processes for the Public Relations division.",
-      "Contributed to staff development and team coordination initiatives.",
-      "Helped maintain effective communication and collaboration within the division.",
+      "Managed recruitment, staff development, and workplace culture to support relations growth.",
+      "Focused on hiring top talent, organizing training programs, and ensuring a positive work environment.",
     ],
     technologies: [
       "Human Resources",
@@ -126,6 +124,7 @@ export const experience: Experience[] = [
     description:
       "Supported the planning and execution of SIWAK-NG events, coordinating event operations and working with teams to ensure smooth program delivery.",
     logo: "/images/experience/siwak.png",
+    gallery: ["/images/experience/siwak.png"],
     achievements: [
       "Coordinated event planning and operational activities.",
       "Supported cross-functional collaboration during event preparation and execution.",
@@ -148,6 +147,7 @@ export const experience: Experience[] = [
     description:
       "Mentored beginners in Python programming through structured lessons, discussions, and hands-on projects focused on programming fundamentals and problem-solving.",
     logo: "/images/experience/ddp0.png",
+    gallery: ["/images/experience/ddp0.png"],
     achievements: [
       "Guided beginners through foundational Python programming concepts and syntax.",
       "Facilitated discussions and hands-on programming exercises to strengthen understanding.",
@@ -171,11 +171,9 @@ export const experience: Experience[] = [
     description:
       "Managed the Product Management Portfolio Program under SISTECH 2025, an intensive initiative empowering young women in technology through portfolio building, mentorship, and hands-on cross-functional projects.",
     logo: "/images/experience/ristek.png",
+    gallery: ["/images/experience/ristek.png"],
     achievements: [
-      "Supported the planning and execution of a portfolio-focused product management program.",
-      "Coordinated learning and mentoring activities to support participants' career readiness.",
-      "Facilitated an environment for participants to gain hands-on experience through real-world projects.",
-      "Contributed to the Sisters in Tech initiative focused on empowering women in technology.",
+      "Chosen as 1 of 20 managers for SISTECH 2025, an exclusive tech program empowering women through mentorship and project-based learning.",
     ],
     technologies: [
       "Product Management",
@@ -195,6 +193,7 @@ export const experience: Experience[] = [
     description:
       "Selected to participate in Pekan RISTEK 2025's Network, Security, and Operating System Open Class from a pool of nearly 350 applicants.",
     logo: "/images/experience/ristek.png",
+    gallery: ["/images/experience/ristek.png"],
     achievements: [
       "Selected as a participant from nearly 350 applicants for the specialized open class.",
       "Explored foundational concepts in networking, cybersecurity, and operating systems.",
@@ -217,6 +216,7 @@ export const experience: Experience[] = [
     description:
       "Participated as a member of Google Developer Groups on Campus Universitas Indonesia, engaging with a technology-focused student community and expanding knowledge through collaborative activities.",
     logo: "/images/experience/gdgoc.png",
+    gallery: ["/images/experience/gdgoc.png"],
     achievements: [
       "Participated in a technology-focused student developer community.",
       "Engaged with peers and community activities surrounding technology and development.",
@@ -238,6 +238,7 @@ export const experience: Experience[] = [
     description:
       "Guided prospective students in exploring the Faculty of Computer Science at Universitas Indonesia by sharing academic insights, personal experiences, and perspectives on technology and innovation.",
     logo: "/images/experience/oh.png",
+    gallery: ["/images/experience/oh.png"],
     achievements: [
       "Guided prospective students in understanding the academic environment at Fasilkom UI.",
       "Shared personal experiences and insights about studying computer science.",
@@ -261,11 +262,10 @@ export const experience: Experience[] = [
     description:
       "Supported academic activities by developing engaging learning materials, facilitating classes, and providing substitute teaching support to ensure continuity and quality of instruction.",
     logo: "/images/experience/betis.png",
+    gallery: ["/images/experience/betis.png"],
     achievements: [
-      "Developed learning materials including modules, quizzes, try-outs, and PowerPoint presentations.",
-      "Created engaging educational resources to improve student understanding of course material.",
-      "Provided substitute teaching support when tutors were unavailable.",
-      "Maintained continuity of learning activities while ensuring high-quality instruction.",
+      "Achieved a 70% university acceptance rate, with 42 out of 60 mentees admitted to top universities across Indonesia through tailored tutoring and curriculum design.",
+      "Co-authored academic modules, quizzes, and mock entrance exams while interviewing and onboarding incoming tutors.",
     ],
     technologies: [
       "Teaching",
@@ -285,6 +285,7 @@ export const experience: Experience[] = [
     description:
       "Selected to participate in Pekan RISTEK's Network, Security, and Operating System Open Class, gaining exposure to foundational concepts in networking, security, and operating systems.",
     logo: "/images/experience/ristek.png",
+    gallery: ["/images/experience/ristek.png"],
     achievements: [
       "Selected as a participant for the specialized NETSOS Open Class.",
       "Explored foundational concepts related to computer networks and security.",

@@ -14,7 +14,7 @@ export function CertificationsSection() {
   if (!certifications || certifications.length === 0) return null;
 
   return (
-    <SectionReveal id="certifications" className="border-t border-black/10 pt-24 dark:border-white/10 md:pt-32">
+    <SectionReveal id="certifications" className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16">
       <div className="flex flex-col gap-6">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
@@ -24,10 +24,10 @@ export function CertificationsSection() {
             Credentials that count.
           </h2>
           <p className="mt-3 text-base text-zinc-700 dark:text-zinc-300 max-w-2xl">
-            Credentials and certifications that support my work across design and technology.
+            Credentials and certifications that support my work across technology.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           {displayed.map((cert: Certification) => (
             <CertificationCard key={cert.id} cert={cert} />
           ))}

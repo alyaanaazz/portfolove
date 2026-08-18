@@ -21,12 +21,18 @@ const FLOAT_SPRING   = { stiffness: 40,  damping: 18, mass: 1.2 };
 
 export function HeroCard() {
   const reduceMotion = useReducedMotion();
-  const [isTouch, setIsTouch] = useState(false);
+  const [isTouch, setIsTouch] = useState(() =>
+    typeof window !== "undefined" ? window.matchMedia("(pointer: coarse)").matches : false
+  );
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+    const mediaQuery = window.matchMedia("(pointer: coarse)");
+    const handleChange = (event: MediaQueryListEvent) => setIsTouch(event.matches);
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   // ─── Cursor motion values (normalized –0.5 … +0.5) ─────────────────────

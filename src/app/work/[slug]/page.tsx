@@ -22,13 +22,15 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     return {};
   }
 
+  const previewMedia = project.gallery[0] ?? project.image;
+
   return {
     title: `${project.title} - ${profile.name}`,
     description: project.description,
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [project.image],
+      images: previewMedia.match(/\.(mp4|webm)$/i) ? undefined : [previewMedia],
     },
   };
 }
@@ -100,21 +102,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         </div>
       </header>
-      <div className="relative mt-12 aspect-[16/9] overflow-hidden rounded-2xl border border-black/10 bg-zinc-200 dark:border-white/10 dark:bg-zinc-900">
-        {project.image.match(/\.(mp4|webm)$/i) ? (
-          <video
-            src={project.image}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <Image src={project.image} alt={`${project.title} project hero`} fill priority sizes="100vw" className="object-cover" />
-        )}
-      </div>
-      <section className="mt-16 grid gap-6 md:grid-cols-2">
+      <section className="mt-12 grid gap-6 md:grid-cols-2">
         {detailBlocks.map((block) => (
           <div key={block.title} className="rounded-2xl border border-black/10 bg-black/[0.03] p-6 dark:border-white/10 dark:bg-white/[0.03]">
             <h2 className="text-xl font-semibold text-zinc-950 dark:text-white">{block.title}</h2>

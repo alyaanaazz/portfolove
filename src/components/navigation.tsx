@@ -31,7 +31,7 @@ export function Navigation() {
     >
       <div className="hidden items-center gap-1 md:flex">
         {links.map((link) => {
-          const active = pathname === link.href || (link.href.startsWith("/#") && pathname === "/");
+          const active = link.href.includes("#") ? false : pathname === link.href;
 
           return (
             <Link
@@ -82,16 +82,24 @@ export function Navigation() {
       </div>
       {open && (
         <div className="absolute left-0 right-0 top-14 rounded-2xl border border-black/10 bg-[#f7f7f5]/95 p-2 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-[#05070b]/95 md:hidden">
-          {links.map((link) => (
+          {links.map((link) => {
+            const active = link.href.includes("#") ? false : pathname === link.href;
+
+            return (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block rounded-xl px-4 py-3 text-sm font-medium text-zinc-700 hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-maroon-800/50 dark:text-zinc-300 dark:hover:bg-white/10"
+              className={`block rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-maroon-800/50 ${
+                active
+                  ? "bg-black/5 text-zinc-950 dark:bg-white/10 dark:text-white"
+                  : "text-zinc-700 hover:bg-black/5 dark:text-zinc-300 dark:hover:bg-white/10"
+              }`}
             >
               {link.label}
             </Link>
-          ))}
+            );
+          })}
         </div>
       )}
     </motion.nav>
