@@ -69,7 +69,7 @@ export default function RootLayout({
           <div className="fixed right-6 top-7 z-50 hidden lg:block">
             <LocalTime />
           </div>
-          <main className="mx-auto min-h-screen max-w-[1400px] px-6 pb-24 pt-32 md:px-12">
+          <main className="mx-auto min-h-screen max-w-[1400px] px-6 pb-8 pt-32 md:px-12">
             {children}
           </main>
           <Footer />

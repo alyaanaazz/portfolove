@@ -14,13 +14,20 @@ export type Profile = {
   designPhilosophy: string;
   developmentPhilosophy: string;
   currentInterests: string[];
+  affiliations: {
+    label: string;
+    href: string;
+    logo: string;
+  }[];
   location: string;
   timezone: string;
   email: string;
   mediumUsername: string;
   cvPath: string;
   profileImage: string;
+  idCardImage?: string;
   siteUrl: string;
+  sourceCodeUrl: string;
   socials: {
     github: string;
     linkedin: string;
@@ -62,6 +69,7 @@ export type Experience = {
   endDate: string;
   description: string;
   logo?: string;
+  gallery?: string[];
   achievements: string[];
   technologies: string[];
 };

@@ -1,17 +1,23 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Images } from "lucide-react";
+import { useState } from "react";
 
 import { SectionReveal } from "@/components/ui/section-reveal";
+import { MediaGalleryModal } from "@/components/ui/media-gallery-modal";
 import { experience } from "@/data/experience";
 
 
 export function ExperienceSection({ showAll = false }: { showAll?: boolean }) {
   const displayed = showAll ? experience : experience.slice(0, 3);
+  const [activeGallery, setActiveGallery] = useState<{
+    title: string;
+    media: string[];
+  } | null>(null);
 
   return (
-    <SectionReveal id="experience" className="border-t border-black/10 pt-24 dark:border-white/10 md:pt-32">
+    <SectionReveal id="experience" className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16">
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
@@ -66,10 +72,21 @@ export function ExperienceSection({ showAll = false }: { showAll?: boolean }) {
                   </span>
                 ))}
               </div>
+              {item.gallery && item.gallery.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setActiveGallery({ title: `${item.company} gallery`, media: item.gallery ?? [] })}
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-zinc-700 transition hover:-translate-y-0.5 hover:border-black/20 hover:text-zinc-950 focus:outline-none focus:ring-2 focus:ring-maroon-800/50 dark:border-white/10 dark:text-zinc-300 dark:hover:border-white/20 dark:hover:text-white"
+                >
+                  <Images size={16} aria-hidden="true" />
+                  Gallery
+                </button>
+              )}
             </div>
           </article>
         ))}
       </div>
+      <MediaGalleryModal gallery={activeGallery} onClose={() => setActiveGallery(null)} />
     </SectionReveal>
   );
 }

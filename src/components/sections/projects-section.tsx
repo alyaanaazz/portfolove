@@ -6,10 +6,10 @@ import { SectionReveal } from "@/components/ui/section-reveal";
 
 export function ProjectsSection({ showAll = false }: { showAll?: boolean }) {
   const sortedProjects = [...projects].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
-  const visibleProjects = showAll ? sortedProjects : sortedProjects.filter((project) => project.featured).slice(0, 2);
+  const visibleProjects = showAll ? sortedProjects : sortedProjects.slice(0, 2);
 
   return (
-    <SectionReveal id="work" className="border-t border-black/10 pt-24 dark:border-white/10 md:pt-32">
+    <SectionReveal id="work" className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16">
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
@@ -26,16 +26,19 @@ export function ProjectsSection({ showAll = false }: { showAll?: boolean }) {
         )}
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        {visibleProjects.map((project) => (
+        {visibleProjects.map((project) => {
+          const previewMedia = project.gallery[0] ?? project.image;
+
+          return (
           <article
             key={project.slug}
             className="group overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] transition hover:-translate-y-1 hover:border-black/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20"
           >
             <Link href={`/work/${project.slug}`} className="block focus:outline-none focus:ring-2 focus:ring-maroon-800/50">
               <div className="relative aspect-[16/10] overflow-hidden bg-zinc-200 dark:bg-zinc-900">
-                {project.image.match(/\.(mp4|webm)$/i) ? (
+                {previewMedia.match(/\.(mp4|webm)$/i) ? (
                   <video
-                    src={project.image}
+                    src={previewMedia}
                     autoPlay
                     loop
                     muted
@@ -44,7 +47,7 @@ export function ProjectsSection({ showAll = false }: { showAll?: boolean }) {
                   />
                 ) : (
                   <Image
-                    src={project.image}
+                    src={previewMedia}
                     alt={`${project.title} project preview`}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
@@ -86,7 +89,8 @@ export function ProjectsSection({ showAll = false }: { showAll?: boolean }) {
               )}
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
     </SectionReveal>
   );

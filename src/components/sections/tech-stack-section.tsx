@@ -339,7 +339,7 @@ export function TechStackSection() {
   return (
     <SectionReveal
       id="stack"
-      className="border-t border-black/10 pt-24 dark:border-white/10 md:pt-32"
+      className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16"
     >
       <div className="mb-12">
         <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">

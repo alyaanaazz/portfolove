@@ -18,6 +18,20 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
+    id: "ai-agent-for-developers",
+    type: "certification",
+    name: "AI Productivity and AI API Integration for Developers",
+    issuer: "Hacktiv8 Indonesia",
+    issueDate: "August 2026",
+    credentialId: "AI Productivity and AI API Integration for Developers",
+    credentialUrl:
+      "https://students.hacktiv8.com/certificates/0039dde8-8c89-4cf7-8ae1-5ae73903a7d2",
+    logo: "/images/certifications/hacktiv8.png",
+    category: " AI Engineer",
+    featured: true,
+  },
+
+  {
     id: "bytesfest-2026-finalist",
     type: "certification",
     name: "Finalist Hackathon BYTESFEST 2026 by HMP MIKROPTIK UNS",
