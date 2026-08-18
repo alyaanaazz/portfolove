@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation";
 import { Providers } from "@/components/providers";
 import { profile } from "@/data/profile";
 import { LocalTime } from "@/components/ui/local-time";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     images: [profile.profileImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
 };
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
