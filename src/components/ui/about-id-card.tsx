@@ -13,14 +13,17 @@ import { profile } from "@/data/profile";
 
 const chips = ["Product", "Development", "UI/UX"];
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 export function AboutIdCard() {
   const reduceMotion = useReducedMotion();
+  const idCardImage = profile.idCardImage ?? profile.profileImage;
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const smoothX = useSpring(cursorX, { stiffness: 180, damping: 24, mass: 0.5 });
-  const smoothY = useSpring(cursorY, { stiffness: 180, damping: 24, mass: 0.5 });
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], [5, -5]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-6, 6]);
+  const smoothX = useSpring(cursorX, { stiffness: 150, damping: 26, mass: 0.6 });
+  const smoothY = useSpring(cursorY, { stiffness: 150, damping: 26, mass: 0.6 });
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [4.5, -4.5]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-5.5, 5.5]);
 
   function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
     if (reduceMotion) return;
@@ -37,80 +40,87 @@ export function AboutIdCard() {
 
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-      className="mt-8 w-full max-w-[18rem] sm:max-w-[19rem] md:mt-10"
-      style={{ perspective: 1000 }}
+      transition={{ duration: 0.78, ease }}
+      className="mt-8 flex w-full max-w-[17rem] justify-center sm:max-w-[18rem] md:mt-10"
+      style={{ perspective: 1100 }}
     >
       <motion.div
-        animate={reduceMotion ? undefined : { y: [0, -5, 0] }}
-        transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          rotateX: reduceMotion ? 0 : rotateX,
-          rotateY: reduceMotion ? 0 : rotateY,
-          transformStyle: "preserve-3d",
-        }}
-        whileHover={{
-          scale: 1.015,
-          boxShadow: "0 28px 70px -34px rgba(5, 7, 11, 0.55)",
-        }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        className="group relative overflow-hidden rounded-[1.4rem] border border-black/10 bg-white/45 p-5 shadow-[0_18px_55px_-38px_rgba(5,7,11,0.6)] backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-white/[0.055]"
+        animate={reduceMotion ? undefined : { y: [0, -4, 0], rotateZ: [-0.8, 0.8, -0.8] }}
+        transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative w-full origin-top"
       >
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.44),transparent_48%),radial-gradient(circle_at_22%_16%,rgba(126,184,218,0.22),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(100,29,50,0.14),transparent_42%)] dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_50%),radial-gradient(circle_at_22%_16%,rgba(126,184,218,0.14),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(212,131,154,0.12),transparent_42%)]" />
-        <div className="relative" style={{ transform: "translateZ(28px)" }}>
-          <div className="flex items-start justify-between gap-4">
-            <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-black/10 bg-zinc-100 shadow-sm dark:border-white/10 dark:bg-white/10">
-              <Image
-                src={profile.profileImage}
-                alt={profile.name}
-                fill
-                sizes="64px"
-                className="object-cover"
-              />
-            </div>
-            <motion.span
-              variants={{
-                hover: { y: -2 },
-              }}
-              className="rounded-full border border-maroon-800/15 bg-maroon-800/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-maroon-800 dark:border-maroon-300/20 dark:bg-maroon-300/10 dark:text-maroon-300"
-            >
-              ID
-            </motion.span>
-          </div>
-
-          <div className="mt-8">
-            <p className="text-xs font-medium uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
-              Portfolio card
-            </p>
-            <h3 className="mt-3 text-xl font-semibold leading-tight text-zinc-950 dark:text-white">
-              {profile.name}
-            </h3>
-            <p className="mt-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
-              Computer Science Student
-            </p>
-            <p className="mt-3 inline-flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400">
-              <MapPin size={14} aria-hidden="true" />
-              {profile.location}
-            </p>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            {chips.map((chip, index) => (
-              <motion.span
-                key={chip}
-                whileHover={reduceMotion ? undefined : { y: -2 }}
-                transition={{ duration: 0.2, delay: index * 0.02 }}
-                className="rounded-full border border-black/10 bg-white/55 px-3 py-1.5 text-xs font-medium text-zinc-600 dark:border-white/10 dark:bg-white/[0.07] dark:text-zinc-300"
-              >
-                {chip}
-              </motion.span>
-            ))}
+        <div className="mx-auto h-16 w-8 rounded-b-xl border-x border-b border-black/10 bg-zinc-950/85 shadow-[0_14px_35px_-28px_rgba(5,7,11,0.9)] dark:border-white/10 dark:bg-black/60">
+          <div className="flex h-full items-center justify-center">
+            <span className="rotate-90 text-[8px] font-semibold uppercase tracking-[0.26em] text-white/70">
+              About
+            </span>
           </div>
         </div>
+        <div className="mx-auto h-5 w-px bg-black/25 dark:bg-white/25" />
+        <div className="mx-auto mb-[-1px] h-3 w-8 rounded-t-full border border-black/10 bg-white/60 backdrop-blur dark:border-white/10 dark:bg-white/10" />
+
+        <motion.div
+          variants={{
+            hover: {
+              scale: 1.018,
+              boxShadow: "0 34px 80px -40px rgba(5, 7, 11, 0.62)",
+            },
+          }}
+          whileHover="hover"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            rotateX: reduceMotion ? 0 : rotateX,
+            rotateY: reduceMotion ? 0 : rotateY,
+            transformStyle: "preserve-3d",
+          }}
+          transition={{ duration: 0.28, ease }}
+          className="group relative overflow-hidden rounded-[1.35rem] border border-black/10 bg-white/48 p-3 shadow-[0_22px_60px_-42px_rgba(5,7,11,0.72)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055]"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.48),transparent_45%),radial-gradient(circle_at_28%_22%,rgba(126,184,218,0.28),transparent_34%),radial-gradient(circle_at_82%_82%,rgba(100,29,50,0.16),transparent_40%)] dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.1),transparent_48%),radial-gradient(circle_at_28%_22%,rgba(126,184,218,0.16),transparent_34%),radial-gradient(circle_at_82%_82%,rgba(212,131,154,0.13),transparent_40%)]" />
+          <div className="relative" style={{ transform: "translateZ(30px)" }}>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-900">
+              <Image
+                src={idCardImage}
+                alt={profile.name}
+                fill
+                sizes="288px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_48%,rgba(5,7,11,0.72))]" />
+              <div className="absolute inset-x-4 bottom-4">
+                <h3 className="text-xl font-semibold leading-tight text-white">
+                  {profile.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-white/78">
+                  Computer Science Student
+                </p>
+              </div>
+            </div>
+
+            <div className="px-1 pb-1 pt-4">
+              <p className="inline-flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-300">
+                <MapPin size={14} aria-hidden="true" />
+                {profile.location}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {chips.map((chip, index) => (
+                  <motion.span
+                    key={chip}
+                    variants={{ hover: { y: -2 } }}
+                    transition={{ duration: 0.2, delay: index * 0.025 }}
+                    className="rounded-full border border-black/10 bg-white/55 px-3 py-1.5 text-xs font-medium text-zinc-600 dark:border-white/10 dark:bg-white/[0.07] dark:text-zinc-300"
+                  >
+                    {chip}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

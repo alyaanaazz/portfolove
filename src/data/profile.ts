@@ -36,6 +36,7 @@ export const profile: Profile = {
   mediumUsername: "nisrina.alya",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://nisrinaalya.site",
   sourceCodeUrl: "https://github.com/alyaanaazz/portfolove",
+  idCardImage: "/images/id-card.png",
   profileImage: "/images/profile.png",
   socials: {
     github: "https://github.com/alyaanaazz",

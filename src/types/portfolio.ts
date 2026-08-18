@@ -25,6 +25,7 @@ export type Profile = {
   mediumUsername: string;
   cvPath: string;
   profileImage: string;
+  idCardImage?: string;
   siteUrl: string;
   sourceCodeUrl: string;
   socials: {
