@@ -10,7 +10,7 @@ import type { Certification } from "@/data/certifications";
 export function CertificationsSection() {
   const [showAll, setShowAll] = useState(false);
   const sortedCerts = [...certifications].sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime());
-  const displayed = showAll ? sortedCerts : sortedCerts.slice(0, 3);
+  const displayed = showAll ? sortedCerts : sortedCerts.slice(0, 2);
   if (!certifications || certifications.length === 0) return null;
 
   return (
@@ -32,7 +32,7 @@ export function CertificationsSection() {
             <CertificationCard key={cert.id} cert={cert} />
           ))}
         </div>
-        {certifications.length > 3 && (
+        {certifications.length > 2 && (
           <div className="mt-4 flex justify-center">
             <button
               onClick={() => setShowAll(!showAll)}

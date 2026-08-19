@@ -7,15 +7,21 @@ import { SectionReveal } from "@/components/ui/section-reveal";
 export function ProjectsSection({ showAll = false }: { showAll?: boolean }) {
   const sortedProjects = [...projects].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
   const visibleProjects = showAll ? sortedProjects : sortedProjects.slice(0, 2);
+  const sectionClassName = showAll
+    ? "pt-10"
+    : "mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16";
+  const headingClassName = showAll
+    ? "mt-4 text-5xl font-semibold tracking-normal text-zinc-950 dark:text-white md:text-7xl"
+    : "mt-4 text-3xl font-semibold tracking-normal text-zinc-950 dark:text-white md:text-4xl";
 
   return (
-    <SectionReveal id="work" className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16">
+    <SectionReveal id="work" className={sectionClassName}>
       <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
             Selected Work
           </p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-normal text-zinc-950 dark:text-white md:text-4xl">
+          <h2 className={headingClassName}>
             Projects built from structured ideas.
           </h2>
         </div>

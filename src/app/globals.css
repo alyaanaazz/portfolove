@@ -28,11 +28,11 @@
 }
 
 .dark {
-  --background: #05070B;
+  --background: #070707;
   --foreground: #F7F7F5;
 
-  --aura-navy: rgba(22, 59, 92, 0.35);
-  --aura-maroon: rgba(100, 29, 50, 0.25);
+  --aura-navy: rgba(76, 95, 93, 0.2);
+  --aura-maroon: rgba(146, 112, 90, 0.14);
 }
 
 html {

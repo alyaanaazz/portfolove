@@ -23,7 +23,7 @@ export default async function BlogPage() {
           Latest writing.
         </h1>
         <p className="mt-5 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-          An editorial index of Medium articles, fetched server-side and linked back to the original posts.
+          Notes from design, code, and product.
         </p>
       </header>
       {posts.length > 0 ? (

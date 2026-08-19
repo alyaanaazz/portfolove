@@ -113,12 +113,12 @@ export function HeroCard() {
       `radial-gradient(ellipse 60% 40% at ${lx}% ${ly}%, rgba(255,255,255,${(lo as number) * 0.09}), transparent 60%)`
   );
 
-  // ─── Ambient glow (navy/maroon) ───────────────────────────────────────────
+  // ─── Ambient glow ─────────────────────────────────────────────────────────
   const ambientGlow = useTransform(
     [ambLightXSpring, ambLightYSpring],
     ([ax, ay]) =>
-      `radial-gradient(ellipse 70% 55% at ${ax}% ${ay}%, rgba(60,30,50,0.38), transparent 65%), ` +
-      `radial-gradient(ellipse 50% 40% at ${100 - (ax as number)}% ${100 - (ay as number)}%, rgba(20,30,70,0.28), transparent 60%)`
+      `radial-gradient(ellipse 70% 55% at ${ax}% ${ay}%, rgba(146,112,90,0.2), transparent 66%), ` +
+      `radial-gradient(ellipse 50% 40% at ${100 - (ax as number)}% ${100 - (ay as number)}%, rgba(74,94,91,0.16), transparent 62%)`
   );
 
   // ─── Dynamic shadow ───────────────────────────────────────────────────────
@@ -227,7 +227,7 @@ export function HeroCard() {
           />
         </div>
 
-        {/* ── Ambient navy / maroon glow ────────────────────────────────── */}
+        {/* ── Ambient glow ──────────────────────────────────────────────── */}
         {!reduceMotion && (
           <motion.div
             className="pointer-events-none absolute inset-0 z-[5]"
