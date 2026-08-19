@@ -80,7 +80,7 @@ export function AboutIdCard() {
           transition={{ duration: 0.28, ease }}
           className="group relative overflow-hidden rounded-[1.35rem] border border-black/10 bg-white/48 p-3 shadow-[0_22px_60px_-42px_rgba(5,7,11,0.72)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.055]"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.48),transparent_45%),radial-gradient(circle_at_28%_22%,rgba(126,184,218,0.28),transparent_34%),radial-gradient(circle_at_82%_82%,rgba(100,29,50,0.16),transparent_40%)] dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.1),transparent_48%),radial-gradient(circle_at_28%_22%,rgba(126,184,218,0.16),transparent_34%),radial-gradient(circle_at_82%_82%,rgba(212,131,154,0.13),transparent_40%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.48),transparent_45%),radial-gradient(circle_at_28%_22%,rgba(126,184,218,0.28),transparent_34%),radial-gradient(circle_at_82%_82%,rgba(100,29,50,0.16),transparent_40%)] dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_48%),radial-gradient(circle_at_28%_22%,rgba(74,94,91,0.12),transparent_36%),radial-gradient(circle_at_82%_82%,rgba(146,112,90,0.1),transparent_42%)]" />
           <div className="relative" style={{ transform: "translateZ(30px)" }}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-900">
               <Image
