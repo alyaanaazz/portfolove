@@ -9,7 +9,7 @@ export const experience: Experience[] = [
     startDate: "2026",
     endDate: "2026",
     description:
-      "Leading strategic project planning and partnership initiatives within the Business and Partnership Bureau, with a focus on organizational growth and stakeholder collaboration.",
+      "Leading strategic project planning initiatives within the Group 6 for final project, with a focus on organizational growth and cross-path collaboration.",
     logo: "/images/experience/ristek.png",
     gallery: ["/images/experience/sistech-1.png", "/images/experience/sistech-2.png", "/images/experience/sistech-3.png"],
     achievements: [
