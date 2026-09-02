@@ -18,6 +18,21 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
+    id: "sistech-2026",
+    type: "certification",
+    name: "Product Management",
+    issuer: "SISTECH 2026 by RISTEK Fasilkom UI",
+    issueDate: "September 2026",
+    description:
+      "Recognized as a Best Mentee of Product Management for Portfolio Program considered from Hands-On Tasks and Final Project",
+    credentialUrl:
+      "https://api.verify.ristek.cs.ui.ac.id/verify/certification/pdf/R2026-5375-1713",
+    credentialId: "R2026-5375-1713",
+    logo: "/images/experience/ristek.png",
+    category: "Product Management",
+    featured: true,
+  },
+  {
     id: "ai-agent-for-developers",
     type: "certification",
     name: "AI Productivity and AI API Integration for Developers",
@@ -27,7 +42,7 @@ export const certifications: Certification[] = [
     credentialUrl:
       "https://students.hacktiv8.com/certificates/0039dde8-8c89-4cf7-8ae1-5ae73903a7d2",
     logo: "/images/certifications/hacktiv8.png",
-    category: " AI Engineer",
+    category: "AI Engineer",
     featured: true,
   },
 

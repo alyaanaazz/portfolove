@@ -3,6 +3,30 @@ import { SectionReveal } from "@/components/ui/section-reveal";
 
 const awards = [
   {
+    title: "Best Mentee of Product Management for Portfolio Program",
+    context: "SISTECH 2026 by RISTEK Fasilkom UI",
+    year: "2026",
+    description:
+      "Recognized as a Best Mentee of Product Management for Portfolio Program considered from Hands-On Tasks and Final Project",
+    credentialUrl:
+      "https://api.verify.ristek.cs.ui.ac.id/verify/certification/pdf/R2026-5375-1713",
+    credentialId: "R2026-5375-1713",
+    certificateUrl:
+      "https://drive.google.com/file/d/1T6zeUVY42YdIDlhqgrYko-wmXsKLIODd/view?usp=sharing",
+  },
+  {
+    title: "Most Outstanding Final Project for Portfolio Program",
+    context: "SISTECH 2026 by RISTEK Fasilkom UI",
+    year: "2026",
+    description:
+      "Recognized as a Most Outstanding Final Project Group for our Group 6's Final Project: SisPro (Sister Protect)",
+    credentialUrl:
+      "https://api.verify.ristek.cs.ui.ac.id/verify/certification/pdf/R2026-5375-1713",
+    credentialId: "R2026-5375-1713",
+    certificateUrl:
+      "https://drive.google.com/file/d/1b_FQ0yaYkZIfMT0xcYDEPUZghEVNS19h/view?usp=sharing",
+  },
+  {
     title: "Finalist of BYTESFEST 2026 Hackathon",
     context: "HMP MIKROPTIK UNS",
     year: "2026",
