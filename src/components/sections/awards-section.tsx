@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Award, ExternalLink, FileText } from "lucide-react";
 import { SectionReveal } from "@/components/ui/section-reveal";
 
@@ -41,24 +43,29 @@ const awards = [
 ];
 
 export function AwardsSection() {
+  const [showAll, setShowAll] = useState(false);
+  const sortedAwards = [...awards].sort((a, b) => b.year.localeCompare(a.year));
+  const displayed = showAll ? sortedAwards : sortedAwards.slice(0, 2);
+
   return (
     <SectionReveal
       id="awards"
       className="mt-16 border-t border-black/10 pt-12 dark:border-white/10 md:mt-20 md:pt-16"
     >
-      <div className="mb-12">
-        <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
-          Award
-        </p>
+      <div className="flex flex-col gap-6">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-maroon-800 dark:text-maroon-300">
+            Award
+          </p>
 
-        <h2 className="mt-4 text-3xl font-semibold tracking-normal text-zinc-950 dark:text-white md:text-4xl">
-          Recognition and milestones.
-        </h2>
-      </div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-normal text-zinc-950 dark:text-white md:text-4xl">
+            Recognition and milestones.
+          </h2>
+        </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        {[...awards].sort((a, b) => b.year.localeCompare(a.year)).map((award) => (
-          <article
+        <div className="grid gap-5 md:grid-cols-2">
+          {displayed.map((award) => (
+            <article
             key={award.title}
             className="rounded-2xl border border-black/10 bg-black/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-maroon-800/30 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-maroon-300/30"
           >
@@ -107,6 +114,17 @@ export function AwardsSection() {
             </p>
           </article>
         ))}
+        </div>
+        {awards.length > 2 && (
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black/[0.03] px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:-translate-y-0.5 hover:border-black/20 focus:outline-none focus:ring-2 focus:ring-maroon-800/50 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:hover:border-white/20"
+            >
+              {showAll ? "Show fewer" : "See all awards"}
+            </button>
+          </div>
+        )}
       </div>
     </SectionReveal>
   );

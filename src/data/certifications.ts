@@ -220,6 +220,24 @@ export const certifications: Certification[] = [
   },
 
   {
+    id: "ddp-0-mentees",
+    type: "certification",
+    name: "Dasar-Dasar Pemrograman 0 Mentee",
+    issuer: "DDP-0 Fasilkom UI 2024 by Gaung ",
+    issueDate: "September 2024",
+    credentialId: "",
+    credentialUrl:
+      "https://drive.google.com/file/d/1GAqw2p30WgZmCEqr6a7csl4OK4QkhnjD/view?usp=sharing",
+    logo: "/images/certifications/ddp0.png",
+    category: "Programming",
+    skills: [
+      "Programming",
+      "Python",
+    ],
+    featured: true,
+  },
+
+  {
     id: "ukbi-2022",
     type: "license",
     name: "Uji Kemahiran Berbahasa Indonesia (UKBI)",
