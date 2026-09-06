@@ -69,6 +69,41 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "AeroMiles",
+    title: "AeroMiles",
+    description:
+      "AeroMiles is a web-based application specifically designed to manage a frequent flyer loyalty program. The system provides a comprehensive set of features for both members and staff, ranging from profile management and award miles package purchases to member-to-member miles transfers and gift redemptions. Additionally, the platform integrates tier level information, partner management, and missing miles claim processing to ensure a seamless experience.",
+    year: "2026",
+    date: "2026-06",
+    role: "Backend Developer",
+    category: "Web Application",
+    image: "/images/projects/aeromiles.mp4",
+    technologies: [
+      "Django",
+      "SQLite",
+      "PostgreSQL",
+      "Supabase",
+      "CSS",
+      "HTML",
+      "GitHub"
+    ],
+    featured: true,
+    problem:
+      "Airlines need a reliable and centralized database system to handle their frequent flyer loyalty programs. The challenge was to create a secure architecture that could manage multiple user roles (Staff, Members), accurately track flight miles, automatically calculate membership tiers, and securely process miles transfers without data inconsistencies or balance overdrafts.",
+    process:
+      "As a Backend Developer, I focused on database transactions and user management. I implemented Role-Based Access Control (RBAC) and CRUD operations for profiles. Using the STAR method for a core feature: my task was to build a secure 'Miles Transfer' system. I engineered strict validation logic to prevent balance overdrafts, utilizing database transactions to deduct the sender's miles, credit the receiver, and log the history simultaneously, ensuring ACID compliance.",
+    solution:
+      "We developed AeroMiles, a robust loyalty program platform. It features an automated tier progression system (e.g., Silver, Gold) based on accrued miles, distinct role permissions separating Staff operations from Member access, and a highly secure transaction engine for transferring and redeeming award miles.",
+    result:
+      "The project resulted in a highly reliable backend architecture. The role-based CRUD operations ensured strict data privacy. The miles transfer feature executed with 100% data integrity, effectively preventing negative balance exploits and maintaining an accurate, automated audit trail for all transactions. This project strengthened my expertise in Django, relational databases, and transactional safety.",
+    gallery: ["/images/projects/aeromiles.mp4"],
+    links: {
+      github: "https://github.com/basdat-2026-b1-project/TK04-SQL-B-b1.git",
+      live: "",
+    },
+  },
+
+  {
     slug: "askmo",
     title: "ASKMO",
     description:
