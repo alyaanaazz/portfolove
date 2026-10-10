@@ -335,4 +335,37 @@ export const projects: Project[] = [
       live: "https://sister-protect.vercel.app/",
     },
   },
+
+  {
+    slug: "EventEase",
+    title: "EventEase",
+    description:
+      "EventEase is an inclusive event-discovery platform that helps people with mobility access needs find public events they can attend with confidence. It matches each attendee’s accessibility needs with detailed venue information, provides a transparent 0–100% suitability score, enables accommodation requests to organizers, and builds trust through post-event accessibility verification.",
+    year: "2026",
+    date: "2026-09",
+    role: "Backend Engineer",
+    category: "Web Application",
+    image: "/images/projects/eventease.png",
+    technologies: [
+      "PostgreSQL",
+      "Supabase",
+      "Git",
+      "API",
+      "Swagger"
+    ],
+    featured: true,
+    problem:
+      "People with mobility access needs often cannot determine whether an event venue will genuinely accommodate them. Generic accessibility labels rarely explain essential details—such as step-free access, accessible restrooms, or walking distance—making it difficult to attend public events with confidence.",
+    process:
+      "As the Product Manager, I translated this accessibility gap into clear product requirements and user flows for both attendees and event organizers. I defined the PRD, user stories, use cases, and acceptance criteria around personalized accessibility needs, event matching, accommodation requests, and post-event verification. Throughout development, I collaborated with the frontend and backend teams to keep the experience aligned with user needs and ensure that accessibility information remained transparent and actionable.",
+    solution:
+      "We developed EventEase, an inclusive event-discovery platform that helps people with mobility access needs find suitable public events. Attendees can create a needs profile, receive a transparent 0–100% event suitability score based on seven accessibility dimensions, request accommodations from organizers, and verify the experience after the event. Organizers can publish detailed accessibility information, respond to requests, and build reliability through attendee feedback.",
+    result:
+      "EventEase transformed vague accessibility claims into a more transparent and accountable event experience. By connecting personal accessibility needs with detailed organizer-provided information, accommodation commitments, and post-event verification, the platform helps attendees make more confident decisions while encouraging organizers to provide more inclusive events.",
+    gallery: ["/images/projects/eventease.png", "/images/projects/eventease-1.png"],
+    links: {
+      github: "https://github.com/NAKBK",
+      live: "https://fe-eventease.vercel.app",
+    },
+  },
 ];
