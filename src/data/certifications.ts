@@ -18,6 +18,21 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
+    id: "datathon-2026-top-100",
+    type: "certification",
+    name: "Participant of DATATHON 2026 Summer Event",
+    issuer: "RISTEK Fasilkom UI",
+    issueDate: "August 2026",
+    description:
+      "Participated in the DATATHON 2026 Summer Event and was recognized as one of the Top 100 teams among thousands of participants.",
+    credentialUrl:
+      "https://api.verify.ristek.cs.ui.ac.id/verify/certification/image/R2026-8467-6565",
+    credentialId: "R2026-8467-6565",
+    logo: "/images/experience/ristek.png",
+    category: "Data & Competition",
+    featured: true,
+  },
+  {
     id: "sistech-2026",
     type: "certification",
     name: "Product Management",

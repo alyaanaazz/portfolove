@@ -87,6 +87,24 @@ button {
   border-bottom: 1px solid rgba(8, 17, 28, 0.06);
 
   background: rgba(255, 255, 255, 0.025);
+
+  /* Fade the content itself at both viewport edges, like the reference
+   * layout. The center stays fully visible while entering/exiting items
+   * gradually become transparent. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 clamp(2.25rem, 6vw, 5rem),
+    #000 calc(100% - clamp(2.25rem, 6vw, 5rem)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 clamp(2.25rem, 6vw, 5rem),
+    #000 calc(100% - clamp(2.25rem, 6vw, 5rem)),
+    transparent 100%
+  );
 }
 
 .dark .tech-marquee-mask {
@@ -96,11 +114,6 @@ button {
   background: rgba(255, 255, 255, 0.015);
 }
 
-/*
- * IMPORTANT:
- * Jangan pakai mask-image di sini.
- * Mask membuat bubble paling kiri/kanan terlihat kepotong.
- */
 .tech-marquee-track {
   display: flex;
   width: max-content;
